@@ -9,16 +9,18 @@
 #ifndef __Subsense__API__
 #define __Subsense__API__
 
-#include "BackgroundSubtractorSuBSENSE.h"
-
 #ifdef __cplusplus
 extern "C"
 {
 #endif
     
-extern BackgroundSubtractorSuBSENSE* ss_create(void* img_data, int width, int height);
+struct SSContext;
+    
+extern SSContext* ss_create(void* img_data, int width, int height);
 
-extern void ss_destroy(BackgroundSubtractorSuBSENSE* subsense);
+extern void ss_apply(SSContext* ctx, void* img_data, void* output);
+
+extern void ss_destroy(SSContext* ctx);
     
 #ifdef __cplusplus
 }
