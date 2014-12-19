@@ -1,0 +1,325 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8A102DE31A43FF22002C1CB9 /* RandUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A102DD51A43FF22002C1CB9 /* RandUtils.h */; };
+		8A102DE41A43FF22002C1CB9 /* LBSP.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A102DD71A43FF22002C1CB9 /* LBSP.h */; };
+		8A102DE51A43FF22002C1CB9 /* LBSP.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8A102DD81A43FF22002C1CB9 /* LBSP.cpp */; };
+		8A102DEA1A43FF22002C1CB9 /* DistanceUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A102DDD1A43FF22002C1CB9 /* DistanceUtils.h */; };
+		8A102DEC1A43FF22002C1CB9 /* BackgroundSubtractorSuBSENSE.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A102DDF1A43FF22002C1CB9 /* BackgroundSubtractorSuBSENSE.h */; };
+		8A102DED1A43FF22002C1CB9 /* BackgroundSubtractorSuBSENSE.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8A102DE01A43FF22002C1CB9 /* BackgroundSubtractorSuBSENSE.cpp */; };
+		8A102DEE1A43FF22002C1CB9 /* BackgroundSubtractorLBSP.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A102DE11A43FF22002C1CB9 /* BackgroundSubtractorLBSP.h */; };
+		8A102DEF1A43FF22002C1CB9 /* BackgroundSubtractorLBSP.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8A102DE21A43FF22002C1CB9 /* BackgroundSubtractorLBSP.cpp */; };
+		8A102DF41A440191002C1CB9 /* API.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8A102DF21A440191002C1CB9 /* API.cpp */; };
+		8A102DF51A440191002C1CB9 /* API.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A102DF31A440191002C1CB9 /* API.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		8A102DC61A43FF03002C1CB9 /* libSubsense.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libSubsense.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A102DD51A43FF22002C1CB9 /* RandUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandUtils.h; sourceTree = "<group>"; };
+		8A102DD71A43FF22002C1CB9 /* LBSP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBSP.h; sourceTree = "<group>"; };
+		8A102DD81A43FF22002C1CB9 /* LBSP.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LBSP.cpp; sourceTree = "<group>"; };
+		8A102DDD1A43FF22002C1CB9 /* DistanceUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistanceUtils.h; sourceTree = "<group>"; };
+		8A102DDF1A43FF22002C1CB9 /* BackgroundSubtractorSuBSENSE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundSubtractorSuBSENSE.h; sourceTree = "<group>"; };
+		8A102DE01A43FF22002C1CB9 /* BackgroundSubtractorSuBSENSE.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BackgroundSubtractorSuBSENSE.cpp; sourceTree = "<group>"; };
+		8A102DE11A43FF22002C1CB9 /* BackgroundSubtractorLBSP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundSubtractorLBSP.h; sourceTree = "<group>"; };
+		8A102DE21A43FF22002C1CB9 /* BackgroundSubtractorLBSP.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BackgroundSubtractorLBSP.cpp; sourceTree = "<group>"; };
+		8A102DF21A440191002C1CB9 /* API.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = API.cpp; sourceTree = "<group>"; };
+		8A102DF31A440191002C1CB9 /* API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = API.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8A102DC31A43FF03002C1CB9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8A102DBD1A43FF03002C1CB9 = {
+			isa = PBXGroup;
+			children = (
+				8A102DC81A43FF03002C1CB9 /* Subsense */,
+				8A102DC71A43FF03002C1CB9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8A102DC71A43FF03002C1CB9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8A102DC61A43FF03002C1CB9 /* libSubsense.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8A102DC81A43FF03002C1CB9 /* Subsense */ = {
+			isa = PBXGroup;
+			children = (
+				8A102DF11A440175002C1CB9 /* C API */,
+				8A102DF01A440167002C1CB9 /* Core */,
+			);
+			path = Subsense;
+			sourceTree = "<group>";
+		};
+		8A102DF01A440167002C1CB9 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				8A102DD51A43FF22002C1CB9 /* RandUtils.h */,
+				8A102DD71A43FF22002C1CB9 /* LBSP.h */,
+				8A102DD81A43FF22002C1CB9 /* LBSP.cpp */,
+				8A102DDD1A43FF22002C1CB9 /* DistanceUtils.h */,
+				8A102DDF1A43FF22002C1CB9 /* BackgroundSubtractorSuBSENSE.h */,
+				8A102DE01A43FF22002C1CB9 /* BackgroundSubtractorSuBSENSE.cpp */,
+				8A102DE11A43FF22002C1CB9 /* BackgroundSubtractorLBSP.h */,
+				8A102DE21A43FF22002C1CB9 /* BackgroundSubtractorLBSP.cpp */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		8A102DF11A440175002C1CB9 /* C API */ = {
+			isa = PBXGroup;
+			children = (
+				8A102DF21A440191002C1CB9 /* API.cpp */,
+				8A102DF31A440191002C1CB9 /* API.h */,
+			);
+			name = "C API";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		8A102DC41A43FF03002C1CB9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A102DE31A43FF22002C1CB9 /* RandUtils.h in Headers */,
+				8A102DEC1A43FF22002C1CB9 /* BackgroundSubtractorSuBSENSE.h in Headers */,
+				8A102DE41A43FF22002C1CB9 /* LBSP.h in Headers */,
+				8A102DF51A440191002C1CB9 /* API.h in Headers */,
+				8A102DEE1A43FF22002C1CB9 /* BackgroundSubtractorLBSP.h in Headers */,
+				8A102DEA1A43FF22002C1CB9 /* DistanceUtils.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		8A102DC51A43FF03002C1CB9 /* Subsense */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A102DD11A43FF03002C1CB9 /* Build configuration list for PBXNativeTarget "Subsense" */;
+			buildPhases = (
+				8A102DC21A43FF03002C1CB9 /* Sources */,
+				8A102DC31A43FF03002C1CB9 /* Frameworks */,
+				8A102DC41A43FF03002C1CB9 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Subsense;
+			productName = Subsense;
+			productReference = 8A102DC61A43FF03002C1CB9 /* libSubsense.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8A102DBE1A43FF03002C1CB9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Saumitro Dasgupta";
+				TargetAttributes = {
+					8A102DC51A43FF03002C1CB9 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+				};
+			};
+			buildConfigurationList = 8A102DC11A43FF03002C1CB9 /* Build configuration list for PBXProject "Subsense" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 8A102DBD1A43FF03002C1CB9;
+			productRefGroup = 8A102DC71A43FF03002C1CB9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8A102DC51A43FF03002C1CB9 /* Subsense */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8A102DC21A43FF03002C1CB9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A102DE51A43FF22002C1CB9 /* LBSP.cpp in Sources */,
+				8A102DED1A43FF22002C1CB9 /* BackgroundSubtractorSuBSENSE.cpp in Sources */,
+				8A102DF41A440191002C1CB9 /* API.cpp in Sources */,
+				8A102DEF1A43FF22002C1CB9 /* BackgroundSubtractorLBSP.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		8A102DCF1A43FF03002C1CB9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		8A102DD01A43FF03002C1CB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		8A102DD21A43FF03002C1CB9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				GCC_ENABLE_CPP_EXCEPTIONS = YES;
+				GCC_ENABLE_CPP_RTTI = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/local/include,
+				);
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				OTHER_LDFLAGS = (
+					"-lopencv_core",
+					"-lopencv_video",
+					"-lopencv_features2d",
+					"-lopencv_imgproc",
+					"-lopencv_highgui",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		8A102DD31A43FF03002C1CB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				GCC_ENABLE_CPP_EXCEPTIONS = YES;
+				GCC_ENABLE_CPP_RTTI = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/local/include,
+				);
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				OTHER_LDFLAGS = (
+					"-lopencv_core",
+					"-lopencv_video",
+					"-lopencv_features2d",
+					"-lopencv_imgproc",
+					"-lopencv_highgui",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8A102DC11A43FF03002C1CB9 /* Build configuration list for PBXProject "Subsense" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A102DCF1A43FF03002C1CB9 /* Debug */,
+				8A102DD01A43FF03002C1CB9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8A102DD11A43FF03002C1CB9 /* Build configuration list for PBXNativeTarget "Subsense" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A102DD21A43FF03002C1CB9 /* Debug */,
+				8A102DD31A43FF03002C1CB9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8A102DBE1A43FF03002C1CB9 /* Project object */;
+}
