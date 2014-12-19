@@ -47,6 +47,8 @@ public:
 	void getBackgroundImage(cv::OutputArray backgroundImage) const;
 	//! returns a copy of the latest reconstructed background descriptors image
 	void getBackgroundDescriptorsImage(cv::OutputArray backgroundDescImage) const;
+    //! compute foreground mask
+    virtual void apply(cv::InputArray image, cv::OutputArray fgmask, double learningRateOverride=0);
 
 protected:
 	//! absolute minimal color distance threshold ('R' or 'radius' in the original ViBe paper, used as the default/initial 'R(x)' value here)

@@ -735,3 +735,8 @@ void BackgroundSubtractorSuBSENSE::getBackgroundDescriptorsImage(cv::OutputArray
 	}
 	oAvgBGDesc.convertTo(backgroundDescImage,CV_16U);
 }
+
+void BackgroundSubtractorSuBSENSE::apply(cv::InputArray image, cv::OutputArray fgmask, double learningRateOverride)
+{
+    (*this)(image, fgmask, learningRateOverride);
+}
