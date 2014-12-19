@@ -1,0 +1,17 @@
+# OS X files
+.DS_Store
+
+# XCode files
+*.xccheckout
+xcuserdata
+
+# Build dirs
+Build/
+build/
+
+# Compiled Python files
+*.pyc
+
+# Pre-built files
+Python/*.dylib
+Python/*.so
