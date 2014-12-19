@@ -67,7 +67,8 @@ BackgroundSubtractorSuBSENSE::BackgroundSubtractorSuBSENSE(	 float fRelLBSPThres
 		,m_fCurrLearningRateLowerCap(FEEDBACK_T_LOWER)
 		,m_fCurrLearningRateUpperCap(FEEDBACK_T_UPPER)
 		,m_nMedianBlurKernelSize(m_nDefaultMedianBlurKernelSize)
-		,m_bUse3x3Spread(true) {
+		,m_bUse3x3Spread(true)
+        ,m_defaultMorphologyKernel(cv::getStructuringElement(cv::MORPH_RECT, cv::Size(3, 3))) {
 	CV_Assert(m_nBGSamples>0 && m_nRequiredBGSamples<=m_nBGSamples);
 	CV_Assert(m_nMinColorDistThreshold>=STAB_COLOR_DIST_OFFSET);
 }
@@ -102,7 +103,7 @@ void BackgroundSubtractorSuBSENSE::initialize(const cv::Mat& oInitImg, const cv:
 		CV_Assert(cv::countNonZero((oROI<UCHAR_MAX)&(oROI>0))==0);
 		oNewBGROI = oROI.clone();
 		cv::Mat oTempROI;
-		cv::dilate(oNewBGROI,oTempROI,cv::Mat(),cv::Point(-1,-1),LBSP::PATCH_SIZE/2);
+		cv::dilate(oNewBGROI,oTempROI,m_defaultMorphologyKernel,cv::Point(-1,-1),LBSP::PATCH_SIZE/2);
 		cv::bitwise_or(oNewBGROI,oTempROI/2,oNewBGROI);
 	}
 	const size_t nOrigROIPxCount = (size_t)cv::countNonZero(oNewBGROI);
@@ -625,15 +626,15 @@ void BackgroundSubtractorSuBSENSE::operator()(cv::InputArray _image, cv::OutputA
 	cv::bitwise_or(m_oCurrRawFGBlinkMask,m_oLastRawFGBlinkMask,m_oBlinksFrame);
 	m_oCurrRawFGBlinkMask.copyTo(m_oLastRawFGBlinkMask);
 	oCurrFGMask.copyTo(m_oLastRawFGMask);
-	cv::morphologyEx(oCurrFGMask,m_oFGMask_PreFlood,cv::MORPH_CLOSE,cv::Mat());
+	cv::morphologyEx(oCurrFGMask,m_oFGMask_PreFlood,cv::MORPH_CLOSE, m_defaultMorphologyKernel);
 	m_oFGMask_PreFlood.copyTo(m_oFGMask_FloodedHoles);
 	cv::floodFill(m_oFGMask_FloodedHoles,cv::Point(0,0),UCHAR_MAX);
 	cv::bitwise_not(m_oFGMask_FloodedHoles,m_oFGMask_FloodedHoles);
-	cv::erode(m_oFGMask_PreFlood,m_oFGMask_PreFlood,cv::Mat(),cv::Point(-1,-1),3);
+	cv::erode(m_oFGMask_PreFlood,m_oFGMask_PreFlood,m_defaultMorphologyKernel,cv::Point(-1,-1),3);
 	cv::bitwise_or(oCurrFGMask,m_oFGMask_FloodedHoles,oCurrFGMask);
 	cv::bitwise_or(oCurrFGMask,m_oFGMask_PreFlood,oCurrFGMask);
 	cv::medianBlur(oCurrFGMask,m_oLastFGMask,m_nMedianBlurKernelSize);
-	cv::dilate(m_oLastFGMask,m_oLastFGMask_dilated,cv::Mat(),cv::Point(-1,-1),3);
+	cv::dilate(m_oLastFGMask,m_oLastFGMask_dilated,m_defaultMorphologyKernel,cv::Point(-1,-1),3);
 	cv::bitwise_and(m_oBlinksFrame,m_oLastFGMask_dilated_inverted,m_oBlinksFrame);
 	cv::bitwise_not(m_oLastFGMask_dilated,m_oLastFGMask_dilated_inverted);
 	cv::bitwise_and(m_oBlinksFrame,m_oLastFGMask_dilated_inverted,m_oBlinksFrame);
