@@ -8,24 +8,26 @@
 
 #include "API.h"
 #include "BackgroundSubtractorSuBSENSE.h"
+#include "BackgroundSubtractorLOBSTER.h"
 #include <opencv2/opencv.hpp>
 
 struct SSContext
 {
-    SSContext() : subsense(nullptr) {}
+    SSContext() : subtractor(nullptr) {}
     ~SSContext()
     {
-        if(subsense!=nullptr)
+        if(subtractor!=nullptr)
         {
-            delete subsense;
+            delete subtractor;
         }
     }
     
-    BackgroundSubtractorSuBSENSE* subsense;
+    BackgroundSubtractorLBSP* subtractor;
     cv::Size2i imgSize;
 };
 
 SSContext* ss_create(void* img_data,
+                     SubtractionMethod method,
                      int width,
                      int height,
                      float lbsp_thresh,
@@ -38,13 +40,26 @@ SSContext* ss_create(void* img_data,
     SSContext* ctx = new SSContext();
     ctx->imgSize = cv::Size2i(width, height);
     cv::Mat img(ctx->imgSize, CV_8UC3, img_data);
-    ctx->subsense = new BackgroundSubtractorSuBSENSE(lbsp_thresh,
-                                                     desc_dist_thresh_offset,
-                                                     min_color_dist_thresh,
-                                                     num_bg_samples,
-                                                     num_req_bg_samples,
-                                                     num_samples_for_moving_avg);
-    ctx->subsense->initialize(img, cv::Mat());
+    
+    if(method==SubtractionMethod::SuBSENSE)
+    {
+        ctx->subtractor = new BackgroundSubtractorSuBSENSE(lbsp_thresh,
+                                                           desc_dist_thresh_offset,
+                                                           min_color_dist_thresh,
+                                                           num_bg_samples,
+                                                           num_req_bg_samples,
+                                                           num_samples_for_moving_avg);
+    }
+    else if(method==SubtractionMethod::LOBSTER)
+    {
+        ctx->subtractor = new BackgroundSubtractorLOBSTER(lbsp_thresh, desc_dist_thresh_offset);
+    }
+    else
+    {
+        std::cerr << "Invalid subtraction method encountered!" << std::endl;
+        return nullptr;
+    }
+    ctx->subtractor->initialize(img, cv::Mat());
     return ctx;
 }
 
@@ -52,7 +67,7 @@ void ss_apply(SSContext* ctx, void* img_data, void* output)
 {
     cv::Mat input_img(ctx->imgSize, CV_8UC3, img_data);
     cv::Mat output_img(ctx->imgSize, CV_8UC1, output);
-    ctx->subsense->apply(input_img, output_img);
+    ctx->subtractor->apply(input_img, output_img);
 }
 
 void ss_destroy(SSContext* ctx)

@@ -10,7 +10,7 @@ LIB_NAME    = 'libSubsense'
 IMG_PTR     = ndpointer(c.c_uint8, flags="C_CONTIGUOUS")
 CTX_PTR     = c.c_void_p
 
-class Subsense(object):
+class LBSP(object):
     def __init__(self,
                  lbsp_thresh = 0.333,
                  desc_dist_thresh_offset = 3,
@@ -32,6 +32,7 @@ class Subsense(object):
         self.lib_subsense.ss_create.argtypes = [IMG_PTR,
                                                 c.c_int,
                                                 c.c_int,
+                                                c.c_int,
                                                 c.c_float,
                                                 c.c_size_t,
                                                 c.c_size_t,
@@ -50,7 +51,7 @@ class Subsense(object):
     def _create(self, img):
         (h, w) = img.shape[:2]        
         self.fg_mask = np.zeros((h,w), np.uint8)        
-        self._ctx = self.lib_subsense.ss_create(img, w, h, *self._params)
+        self._ctx = self.lib_subsense.ss_create(img, self._method(), w, h, *self._params)
 
     def apply(self, img):                
         if self._ctx is None:
@@ -61,6 +62,14 @@ class Subsense(object):
     def release(self):
         self.lib_subsense.ss_destroy(self._ctx)
         self._ctx = None
+
+class Subsense(LBSP):
+    def _method(self):
+        return 0
+
+class Lobster(LBSP):
+    def _method(self):
+        return 1
 
 def main():
     import sys
@@ -81,7 +90,7 @@ def main():
         quit = ((keycode & 0xFF) == ord('q'))
         if quit:
             break
-    s.release()
+    subtractor.release()
 
 if __name__=='__main__':
     main()

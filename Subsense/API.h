@@ -18,7 +18,14 @@ extern "C"
     
 struct SSContext;
     
+enum class SubtractionMethod: int
+{
+    SuBSENSE    =   0,
+    LOBSTER     =   1
+};
+    
 extern SSContext* ss_create(void* img_data,
+                            SubtractionMethod method,
                             int width,
                             int height,
                             float lbsp_thresh,
